@@ -1,0 +1,481 @@
+/*Fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Quicksand:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Quicksand:wght@300;400;500&family=Spartan:wght@100;200;300;400&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/*variables establecidas*/
+:root {
+    --rojo: #F93051;
+    --rojoClaro: #df4d49;
+    --rojoMedio: #d34240;
+    --rojoFuerte: #c63637;
+    --gris: #D7E0D8;
+    --azulClaro: #A1DEDD;
+    --azulMedio: #2F7899;
+    --azulFuerte: #133255;
+    --letraTitulo: 'Poiret';
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Spartan', sans-serif;
+    font-size: 20px;
+
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    text-decoration-color: none;
+}
+
+h1 {
+    font-size: 100px;
+}
+
+h2 {
+    font-size: 80px;
+}
+
+
+/*Atributos clases*/
+.fila {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.columna {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.distribuir {
+    justify-content: space-between;
+}
+
+.centrarElementos {
+    align-items: center;
+}
+
+.caja {
+    min-height: 100vh;
+}
+
+.padding-top {
+    padding: 80px 0;
+}
+
+.simple-padding {
+    padding: 20px 0;
+}
+
+.texto-contenedor,
+.contenedor-img {
+    width: 50%;
+    padding: 0 15px;
+}
+
+.container {
+    max-width: 1190px;
+    margin: auto;
+}
+
+.contenedor-img {}
+
+.contenedor-img img {
+    width: 90%;
+    border-radius: 10px;
+}
+
+.contenedor-img .img-box {
+    position: relative;
+}
+
+.contenedor-img .img-box h3 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+/* botones */
+.boton {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: transparent;
+    border-radius: 30px;
+    text-transform: capitalize;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: inherit;
+    color: var(--rojo);
+    line-height: 1.5;
+    user-select: none;
+    border: none;
+}
+
+.btn-default {
+    border: 2px solid var(--rojo);
+}
+
+.btn-default:hover {
+    color: white;
+    background-color: var(--rojo);
+}
+
+/* animation keyframes */
+@keyframes zoomInOut {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes rotacion {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes cargarPagina {
+
+    0%,
+    100% {
+        transform: translateX(-50px);
+    }
+
+    50% {
+        transform: translateX(50px);
+    }
+}
+
+
+/*TÍTULOS*/
+.titulo-seccion {
+    width: 100%;
+    padding: 20px 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: var(--azulMedio);
+    color: white;
+}
+
+.titulo-seccion h2 {
+    font-size: 35px;
+}
+
+.titulo-seccion h2::before {
+    display: block;
+    font-size: 30;
+    color: white;
+    font-family: var(--letraTitulo);
+}
+
+
+/*NAVEGADOR*/
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--rojo);
+}
+
+.nombre {
+    font-size: 1.5rem;
+    margin: .5rem;
+    padding-left: 50px;
+}
+
+.nombre a {
+    text-decoration: none;
+    color: white;
+    transition-duration: 1.5s;
+}
+
+.nombre a:hover {
+    color: var(--azulClaro);
+}
+
+.navbar-secciones {
+    height: 100%;
+}
+
+.navbar-secciones ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-secciones li {
+    list-style: none;
+    transition-duration: 1.5s;
+}
+
+.navbar-secciones li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+}
+
+.navbar-secciones li:hover {
+    background-color: var(--azulClaro);
+}
+
+.menu-hamburguesa {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.menu-hamburguesa .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/*CONCURSOS*/
+.seccion-concursos .fila {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.seccion-concursos .columna {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.seccion-concursos h3 {
+    color: var(--rojo);
+}
+
+video,
+iframe {
+    position: relative;
+}
+
+/*CORTOS*/
+.seccion-cortos .columna{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.seccion-cortos .columna p{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.seccion-cortos .columna h3,
+span{
+    color: var(--rojo);
+}
+.seccion-cortos .columna .fila{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+
+/*FOTOGRAFÍA*/
+.fila-galeria {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.columna-galeria {
+    flex: 25%;
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.columna-galeria img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+
+
+
+/*FOOTER*/
+.seccion-contacto .titulo-seccion {
+    color: white;
+}
+
+.seccion-contacto {
+    background-image: url(../img/bg1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+    color: white;
+    padding-bottom: 40px;
+}
+
+.fondo-footer::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+.seccion-contacto .fila {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.seccion-contacto .redes {
+    color: white;
+    width: 60px;
+    padding-bottom: 40px;
+}
+
+i {
+    font-size: 30px;
+}
+
+.seccion-contacto .columna h3 {
+    color: white;
+}
+
+.seccion-contacto .columna a {
+    color: white;
+}
+
+/*RESPONSIVE*/
+@media (max-width: 900px) {
+    .columna-galeria {
+        flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+    }
+    
+    .seccion-concursos .columna{
+        width: 100%;
+        text-align: center;
+    }
+    .seccion-concursos .fila{
+        text-align: center;
+    }
+    
+    .seccion-cortos .columna{
+        width: 100%;
+        text-align: center;
+    }
+    .seccion-cortos .fila{
+        text-align: center;
+    }
+}
+
+@media (max-width: 750px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-hamburguesa {
+        display: flex;
+    }
+
+    .navbar-secciones {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-secciones ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-secciones ul li {
+        text-align: center;
+    }
+
+    .navbar-secciones ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-secciones.active {
+        display: flex;
+    }
+
+    .columna {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+    .columna-galeria {
+        flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
+    .seccion-contacto .columna {
+        width: 100%;
+    }
+}
